@@ -14,15 +14,16 @@ namespace Full_GRASP_And_SOLID
         private IList<Step> steps = new List<Step>();
 
         public Product FinalProduct { get; set; }
-
-        public void AddStep(Step step)
+        // Se crea Step dentro del método AddStep (Creator)
+        public void AddStep(Product product, double quantity, Equipment equipment, int time)
         {
-            this.steps.Add(step);
+            this.steps.Add(new Step(product, quantity, equipment, time));
         }
 
-        public void RemoveStep(Step step)
+        // Se crea Step dentro del método RemoveStep (Creator)
+        public void RemoveStep(Product input, double quantity, Equipment equipment, int time)
         {
-            this.steps.Remove(step);
+            this.steps.Remove(new Step(input, quantity, equipment, time));
         }
 
         // Agregado por SRP
